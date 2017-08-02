@@ -1,0 +1,85 @@
+<refentry id="{@id}">
+<refnamediv>
+<refname>User Guide for Gliffy PHP Client Library</refname>
+<refpurpose>Provide an overview for accessing Gliffy via PHP</refpurpose>
+</refnamediv>
+<refsynopsisdiv>
+<author>
+Gliffy
+</author>
+</refsynopsisdiv>
+{@toc}
+<refsect1 id="{@id intro}">
+<title>Intro</title>
+<para>
+Gliffy provides API access via a REST API, which is essentially a set of standard URLs that respond to various HTTP requests.  While this API can be used to
+access Gliffy via any programming language, it is less than convienient for day-to-day usage.  This document describes the PHP classes Gliffy provides 
+that use the REST API.
+</para>
+<para>
+The classes you will interact with most are {@link Gliffy} and those in {@link DataContainer}.  The Gliffy class provides the main functional interface, and some methods that return
+data do so using the data container classes.  This alleviates you from having to parse XML or deal with HTTP error codes.
+</para>
+</refsect1>
+<refsect2 id="{@id installation}">
+<title>Installation</title>
+<para>
+Installing the Gliffy PHP Client is simply a matter of placing the files somewhere in your web server's document root, wherever PHP may execute.  See your web server documentation or website administrator if you aren't sure where this is.
+</para>
+</refsect2>
+<refsect2 id="{@id configuration}">
+<title>Configuration</title>
+<para>
+To configure the Gliffy PHP Client Library, copy {@link config_example.php} to config.php and modify the api key, account name, and shared secret properties.  That file has extensive documentation on the configuration settings.
+</para>
+</refsect2>
+<refsect2 id="{@id validation}">
+<title>Validate Your Configuration</title>
+<para>
+To validate your environment, the script {@link test_configuration.php} can be used, either via command-line or web.  Once you have setup {@link config.php} correctly, this script will make a simple call to Gliffy using the API to make sure your configuration is correct.   
+</para>
+</refsect2>
+
+<refsect1 id="{@id using}">
+<title>Using the Gliffy PHP Client Library</title>
+<para>
+You simply need to require {@link Gliffy.php} in your script.  It will find the asscociated classes and your configuration file.  You can then use the library by creating a new instance of {@link Gliffy}.  The documentaiton for that class has examples as well as
+descriptions of all available methods, but a example is included below.  You can also find a simple example in the <i>example</i> directory that is included with this package.
+</para> 
+
+<para> 
+// get the gliffy context object for the user adminapiuser@gliffy.com.  
+</para>
+<para>
+$gliffy = new Gliffy('adminapiuser@gliffy.com');
+</para>
+
+<para>
+// create a diagram
+</para>
+
+<para>
+$newDiagramId = $gliffy->createDiagram($newDiagramName);<br />
+</para>
+
+<para>
+// get a URL that points to an image of the new diagram<br />
+</para>
+
+<para>
+$diagramImageURL = $gliffy->getDiagramAsURL($diagramId,Gliffy::MIME_TYPE_PNG);<br />
+</para>
+
+<para>
+// get a URL for the Gliffy editor to edit this current diagram<br />
+</para>
+
+<para>
+$gliffy->getEditDiagramLink($diagramId, $_SERVER['REQUEST_URI'] ,"Back to simple demo"); <br />
+</para>
+
+
+
+</refsect1>
+</refentry>
+

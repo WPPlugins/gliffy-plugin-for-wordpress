@@ -1,0 +1,20 @@
+README for Gliffy PHP Client Library
+
+All contents of the package in which this file exists are Copyright (c) 2009, Gliffy, Inc.
+
+All files are released under the Apache License, 2.0, included in LICENSE.txt.
+
+Package file listing:
+
+README - this file
+LICENSE.txt - the license
+CHANGELOG - History of changes to library
+INSTALL - installation instructions
+/src/ - the client library.  See INSTALL for installation
+/src/test_configuration.php - simple script you can use to see if your configuration is correct.
+/examples/ - some example source code
+/doc/ - generated PHP doc describing the API.  
+/test/ - Unit Test Suite
+
+Please visit http://www.gliffy.com/developer/ for more information.
+

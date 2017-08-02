@@ -1,0 +1,13 @@
+These are the unit tests for the Gliffy Online PHP Client
+
+In order for these tests to work, you need to have a valid config.php file in the '../src' directory.  
+
+Please do not check your own personal config.php into source control.  Instead, create a symlink to your config.php.
+
+All unit tests should output valid JUnit XML output to the ../test-results directory.  
+By doing so, our Continuous Integration Server will run the tests after each commit to source control.
+
+You can see the status of builds here: 
+http://bamboo.gliffy.com/
+
+

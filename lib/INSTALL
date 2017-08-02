@@ -1,0 +1,16 @@
+1. Copy config_example.php to config.php
+2. Modify config.php based on your account information.  This will include
+   at least the api key, shared secret and account name.  All of these should
+   be available via gliffy.com
+
+   You can test this using the script test_configuration.php  It contains comments in the script
+   to tell you how to use it.
+
+3. Copy all files to somewhere in your PHP include path
+4. In your application, do
+
+   require "Gliffy.php"
+
+   It will require the other necessary files.
+5. Refer to /examples/ for helpful examples to get you started.
+
